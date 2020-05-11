@@ -23,4 +23,8 @@ RUN mv /tmp/nginx.conf /etc/nginx/nginx.conf
 RUN sed 's/;opcache.enable=1/opcache.enable=1/g' /etc/php7/php.ini | sed 's/;opcache.validate_timestamps=1/opcache.validate_timestamps=0/g' | sed 's/;opcache.memory_consumption=128/opcache.memory_consumption=128/g' | sed 's/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=8/g' | sed 's/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=10000/g' > /tmp/php.ini
 RUN mv /tmp/php.ini /etc/php7/php.ini
 
+VOLUME /var/www
+
+EXPOSE 80 443
+
 CMD ["/run.sh"]
