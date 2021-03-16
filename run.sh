@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Environment
+sed -i -e "s|###appId###|$appId|g" weAppCode.php && \
+sed -i -e "s|###weapp_secret###|$weapp_secret|g" weAppCode.php && \
+sed -i -e "s|###imgpath###|$imgpath|g" weAppCode.php
 
 # Start php and nginx 
 while :
