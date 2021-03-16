@@ -1,4 +1,13 @@
 ## 生成镜像
+
+脚本没有执行权限
+
+```
+git update-index --chmod=+x run.sh
+```
+
+
+
 ```bash
 docker build -t yaokun/php-nginx:7-alpine .
 ```
@@ -9,6 +18,11 @@ docker build -t yaokun/php-nginx:7-alpine .
 
 ## 运行镜像
 ```bash
-docker run -d -p 80:80 yaokun/php-nginx:7-alpine
+docker run -d \
+-p 80:80 \
+-e appId='' \
+-e weapp_secret='' \
+-e imgpath='' \
+yaokun/php-nginx:7-alpine
 ```
 
