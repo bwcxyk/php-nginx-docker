@@ -8,7 +8,7 @@ RUN set -x \
     && apk add nginx  \
     && apk add curl bash \
     && apk add libpng-dev icu-dev gmp-dev \
-	&& docker-php-ext-install -j$(nproc) mysqli pdo_mysql gd intl opcache bcmath zip pcntl gmp \
+    && docker-php-ext-install -j$(nproc) mysqli pdo_mysql gd intl opcache bcmath zip pcntl gmp \
     && mkdir /run/nginx
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
